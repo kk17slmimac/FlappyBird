@@ -5,11 +5,6 @@
 //  Created by 久保田慧 on 2018/11/10.
 //  Copyright © 2018年 KeiKubota. All rights reserved.
 //
-//鳥がアイテムに衝突（取得）したときに、アイテムを消し、アイテムスコアを+1してください
-//また、アイテム取得音を出してください
-//【課題】
-//飛んでいるだけでスコアアップしているので、そこを修正→修正済み
-//見えない壁問題
 
 
 import SpriteKit
@@ -26,7 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    // 衝突判定カテゴリー ↓追加
+    // 衝突判定カテゴリー
     let birdCategory: UInt32 = 1 << 0       // 0...00001
     let groundCategory: UInt32 = 1 << 1     // 0...00010
     let wallCategory: UInt32 = 1 << 2       // 0...00100
@@ -71,9 +66,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupBird()
         setupScoreLabel()
         setupItem()
-        
         //BGM
-      bgmMusic()
+        bgmMusic()
     }
     
     
@@ -219,7 +213,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let under_wall_y = CGFloat(under_wall_lowest_y + random_y)
             
             // キャラが通り抜ける隙間の長さ
-            let slit_length = self.frame.size.height / 6
+            let slit_length = self.frame.size.height / 3
             
             // 下側の壁を作成
             let under = SKSpriteNode(texture: wallTexture)
@@ -230,7 +224,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             under.physicsBody?.categoryBitMask = self.wallCategory
             // 衝突の時に動かないように設定する
             under.physicsBody?.isDynamic = false
-            
             wall.addChild(under)
             
             // 上側の壁を作成
@@ -255,9 +248,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             scoreNode.physicsBody?.contactTestBitMask = self.birdCategory
             
             wall.addChild(scoreNode)
-            
             wall.run(wallAnimation)
-            
             self.wallNode.addChild(wall)
         })
         
@@ -287,7 +278,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // 物理演算を設定
         bird.physicsBody = SKPhysicsBody(circleOfRadius: bird.size.height / 2.0)
-        
+                
         // 衝突した時に回転させない
         bird.physicsBody?.allowsRotation = false
         
@@ -309,7 +300,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // 画面をタップした時に呼ばれる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if scrollNode.speed > 0 { // 追加
+        if scrollNode.speed > 0 {
             // 鳥の速度をゼロにする
             bird.physicsBody?.velocity = CGVector.zero
             
@@ -336,10 +327,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             itemScoreLabelNode.text = "ItemScore:\(itemScore)"
             
             if contact.bodyA.node!.isEqual(to: itemNode) {
-                contact.bodyB.node?.removeFromParent()
+                contact.bodyA.node?.removeFromParent()
                 music(musicName: "getItem.mp3")
             }else{
-                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
                 music(musicName: "getItem.mp3")
             }
         }
@@ -349,7 +340,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // スコア用の物体と衝突した
             print("ScoreUp")
             score += 1
-            scoreLabelNode.text = "Score:\(score)"    // ←追加
+            scoreLabelNode.text = "Score:\(score)"
             
             // ベストスコア更新か確認する
             var bestScore = userDefaults.integer(forKey: "BEST")
@@ -468,11 +459,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             upItem.size = CGSize(width: upItem.size.width*0.3, height: upItem.size.height*0.3)
             
             //スプライトに物理演算を設定する
-            upItem.physicsBody = SKPhysicsBody(rectangleOf: itemTexture.size())
+            upItem.physicsBody = SKPhysicsBody(circleOfRadius: upItem.size.height / 2.0)
             
             //衝突の時に動かないように設定する
             upItem.physicsBody?.isDynamic = false
-            
             
             
             //画面表示

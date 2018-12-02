@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F7168F4721B2BE6800BD87A8 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7168F4621B2BE6700BD87A8 /* bgm.mp3 */; };
-		F7168F5021B2C9C700BD87A8 /* getItem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7168F4E21B2C9C700BD87A8 /* getItem.mp3 */; };
-		F7168F5121B2C9C700BD87A8 /* gameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7168F4F21B2C9C700BD87A8 /* gameOver.mp3 */; };
+		F7168F5521B3C74A00BD87A8 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7168F5221B3C74A00BD87A8 /* bgm.mp3 */; };
+		F7168F5621B3C74A00BD87A8 /* getItem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7168F5321B3C74A00BD87A8 /* getItem.mp3 */; };
+		F7168F5721B3C74A00BD87A8 /* gameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7168F5421B3C74A00BD87A8 /* gameOver.mp3 */; };
 		F7FA53E72196CAE700E49FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FA53E62196CAE700E49FCE /* AppDelegate.swift */; };
 		F7FA53E92196CAE700E49FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FA53E82196CAE700E49FCE /* ViewController.swift */; };
 		F7FA53EC2196CAE700E49FCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FA53EA2196CAE700E49FCE /* Main.storyboard */; };
@@ -19,9 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F7168F4621B2BE6700BD87A8 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
-		F7168F4E21B2C9C700BD87A8 /* getItem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = getItem.mp3; path = ../../../../../Downloads/getItem.mp3; sourceTree = "<group>"; };
-		F7168F4F21B2C9C700BD87A8 /* gameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gameOver.mp3; path = ../../../../../Downloads/gameOver.mp3; sourceTree = "<group>"; };
+		F7168F5221B3C74A00BD87A8 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgm.mp3; path = ../../../../../Downloads/bgm.mp3; sourceTree = "<group>"; };
+		F7168F5321B3C74A00BD87A8 /* getItem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = getItem.mp3; path = ../../../../../Downloads/getItem.mp3; sourceTree = "<group>"; };
+		F7168F5421B3C74A00BD87A8 /* gameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gameOver.mp3; path = ../../../../../Downloads/gameOver.mp3; sourceTree = "<group>"; };
 		F7FA53E32196CAE700E49FCE /* FlappyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FA53E62196CAE700E49FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7FA53E82196CAE700E49FCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,9 +46,9 @@
 		F7168F3D21B2BA1F00BD87A8 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				F7168F4F21B2C9C700BD87A8 /* gameOver.mp3 */,
-				F7168F4E21B2C9C700BD87A8 /* getItem.mp3 */,
-				F7168F4621B2BE6700BD87A8 /* bgm.mp3 */,
+				F7168F5221B3C74A00BD87A8 /* bgm.mp3 */,
+				F7168F5421B3C74A00BD87A8 /* gameOver.mp3 */,
+				F7168F5321B3C74A00BD87A8 /* getItem.mp3 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -143,11 +143,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7FA53F12196CAE900E49FCE /* LaunchScreen.storyboard in Resources */,
-				F7168F5021B2C9C700BD87A8 /* getItem.mp3 in Resources */,
-				F7168F5121B2C9C700BD87A8 /* gameOver.mp3 in Resources */,
+				F7168F5621B3C74A00BD87A8 /* getItem.mp3 in Resources */,
+				F7168F5721B3C74A00BD87A8 /* gameOver.mp3 in Resources */,
 				F7FA53EE2196CAE900E49FCE /* Assets.xcassets in Resources */,
 				F7FA53EC2196CAE700E49FCE /* Main.storyboard in Resources */,
-				F7168F4721B2BE6800BD87A8 /* bgm.mp3 in Resources */,
+				F7168F5521B3C74A00BD87A8 /* bgm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
